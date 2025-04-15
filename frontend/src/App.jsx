@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import EducationPage from './pages/EducationPage';
+import ProjectsPage from './pages/ProjectsPage';
+import SkillsPage from './pages/SkillsPage';
+import ContactPage from './pages/ContactPage';
+import ContentDiv from './components/ContentDiv';
+import Nav from './components/Nav';
+import PageContentDiv from './components/PageContentDiv';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <p className='text-red-700'>hi there</p>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ContentDiv className='w-[100vw] h-[100vh]'>
+      <BrowserRouter>
+        <Nav/>
+        <PageContentDiv>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/projects' element={<ProjectsPage />} />
+            <Route path='/education' element={<EducationPage />} />
+            <Route path='/skills' element={<SkillsPage />} />
+            <Route path='/contact' element={<ContactPage />} />
+          </Routes>
+        </PageContentDiv>
+      </BrowserRouter>
+    </ContentDiv>
   )
 }
 
