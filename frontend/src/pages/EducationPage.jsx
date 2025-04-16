@@ -16,11 +16,11 @@ export default function EducationPage({}){
     return (
         <>
             <Header>Education</Header>
-            {degrees.map((degree) => {
+            {degrees.map((degree, index) => {
                 return (
-                    <>
+                    <div key={index}>
                         <DegreeCard degree={degree}/>
-                    </>
+                    </div>
                 );   
             })}
         </>
