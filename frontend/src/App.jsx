@@ -11,7 +11,7 @@ import PageContentDiv from './components/PageContentDiv';
 function App() {
 
   return (
-    <ContentDiv className='w-[100vw] h-[100vh]'>
+    <ContentDiv className='min-h-[100vh] pb-8'>
       <BrowserRouter>
         <Nav/>
         <PageContentDiv>

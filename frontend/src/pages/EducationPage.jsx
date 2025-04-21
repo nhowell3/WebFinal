@@ -3,6 +3,7 @@ import API from "../environment/API";
 import axios from 'axios'
 import DegreeCard from "../components/DegreeCard";
 import Header from "../components/Header";
+import PaddedView from "../components/PaddedView";
 
 export default function EducationPage({}){
     const [degrees, setDegrees] = useState([]);
@@ -16,13 +17,15 @@ export default function EducationPage({}){
     return (
         <>
             <Header>Education</Header>
-            {degrees.map((degree, index) => {
-                return (
-                    <div key={index}>
-                        <DegreeCard degree={degree}/>
-                    </div>
-                );   
-            })}
+            <PaddedView>
+                {degrees.map((degree, index) => {
+                    return (
+                        <div key={index}>
+                            <DegreeCard degree={degree}/>
+                        </div>
+                    );   
+                })}
+            </PaddedView>
         </>
     );
 }

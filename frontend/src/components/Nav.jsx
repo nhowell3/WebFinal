@@ -1,6 +1,8 @@
+import DarkModeTheme from "../themes/DarkModeTheme";
 import ContentDiv from "./ContentDiv";
 import HorizontalList from "./HorizontalList";
 import NavLink from "./NavLink";
+import DarkModeToggle from "./DarkModeToggle";
 
 export default function Nav({}){
     return (
@@ -13,6 +15,7 @@ export default function Nav({}){
                     <NavLink to="/skills">Skills</NavLink>  
                     <NavLink to="/contact">Contact</NavLink>  
                 </HorizontalList>
+                <DarkModeToggle/>
             </ContentDiv>
         </nav>
     );
