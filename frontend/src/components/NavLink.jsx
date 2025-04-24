@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 import UserPreferences from "../preferences/UserPreferences";
 import { useState } from "react";
+import Themes from "../themes/Themes";
 
 export default function NavLink({children, to = ''}){
-    const [textColor, setTextColor] = useState(UserPreferences.getCurrentTheme().primaryText);
+    const [textColor, setTextColor] = useState(UserPreferences.darkMode ? Themes.dark.primaryText : Themes.light.primaryText);
 
     const handleMouseEnter = () => {
-        setTextColor(UserPreferences.getCurrentTheme().accent);
+        setTextColor(UserPreferences.darkMode ? Themes.dark.accent : Themes.light.accent);
     }
 
     const handleMouseLeave = () => {
-        setTextColor(UserPreferences.getCurrentTheme().primaryText);
+        setTextColor(UserPreferences.darkMode ? Themes.dark.primaryText : Themes.light.primaryText);
     }
 
     return (

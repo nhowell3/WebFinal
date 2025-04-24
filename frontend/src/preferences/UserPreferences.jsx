@@ -1,13 +1,16 @@
-import Themes from "../themes/Themes";
-
 export default class UserPreferences {
-    static theme = 'light';
+    static darkMode = true;
 
-    static getCurrentTheme() {
-        return Themes[this.theme];
+    static async setDarkMode(newDarkMode) {
+        this.darkMode = newDarkMode;
+        localStorage.setItem("darkMode", this.darkMode);
+        // window.location.reload();
     }
 
-    static setCurrentTheme(newTheme) {
-        this.theme = newTheme;
+    static loadSettings() {
+        this.darkMode = localStorage.getItem("darkMode");
+        if (!this.darkMode) {
+            this.darkMode = false
+        }
     }
 }

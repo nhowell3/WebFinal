@@ -20,12 +20,8 @@ export default function ProjectsPage({}){
                 return (
                     <div key={index}>
                         <Card>
+                            <img src={project.image}/>
                             {project.title}
-                            {project.description}
-                            {project.technologies}
-                            {project.github_link}
-                            {project.live_demo_link}
-                            {project.image}
                         </Card>
                     </div>
                 );   

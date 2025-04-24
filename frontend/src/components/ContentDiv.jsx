@@ -1,4 +1,5 @@
 import UserPreferences from "../preferences/UserPreferences";
+import Themes from "../themes/Themes";
 
 export default function ContentDiv({children, className = '', useSecondaryBg = false, useSecondaryText = false}){
     return (
@@ -6,11 +7,11 @@ export default function ContentDiv({children, className = '', useSecondaryBg = f
             className={className}
             style={{
                 background: (useSecondaryBg ? 
-                    UserPreferences.getCurrentTheme().secondaryBg : 
-                    UserPreferences.getCurrentTheme().primaryBg),
+                    (UserPreferences.darkMode ? Themes.dark.secondaryBg : Themes.light.secondaryBg) : 
+                    (UserPreferences.darkMode ? Themes.dark.primaryBg : Themes.light.primaryBg)),
                 color: (useSecondaryText ?
-                    UserPreferences.getCurrentTheme().secondaryText :
-                    UserPreferences.getCurrentTheme().primaryText)
+                    (UserPreferences.darkMode ? Themes.dark.secondaryText : Themes.light.secondaryText) :
+                    (UserPreferences.darkMode ? Themes.dark.primaryText : Themes.light.primaryText))
             }} 
         >
             {children}
