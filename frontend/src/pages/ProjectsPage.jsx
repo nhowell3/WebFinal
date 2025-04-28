@@ -3,6 +3,7 @@ import axios from "axios";
 import API from "../environment/API";
 import Header from "../components/Header";
 import Card from "../components/Card";
+import ProjectCard from "../components/ProjectCard";
 
 export default function ProjectsPage({}){
     const [projects, setProjects] = useState([]);
@@ -19,10 +20,9 @@ export default function ProjectsPage({}){
             {projects.map((project, index) => {
                 return (
                     <div key={index}>
-                        <Card>
-                            <img src={project.image}/>
-                            {project.title}
-                        </Card>
+                        <ProjectCard
+                            project={project}
+                        />
                     </div>
                 );   
             })}
