@@ -7,12 +7,8 @@ import ContactPage from './pages/ContactPage';
 import ContentDiv from './components/ContentDiv';
 import Nav from './components/Nav';
 import PageContentDiv from './components/PageContentDiv';
-import UserPreferences from './preferences/UserPreferences';
-import { useEffect } from 'react';
 
 function App() {
-  UserPreferences.loadSettings();
-
   return (
     <ContentDiv className='min-h-[100vh] pb-8'>
       <BrowserRouter>

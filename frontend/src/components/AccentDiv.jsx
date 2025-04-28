@@ -1,9 +1,11 @@
-import UserPreferences from "../preferences/UserPreferences";
 import Themes from "../themes/Themes";
+import { useLocalStorage } from "@uidotdev/usehooks";
 
 export default function AccentDiv({children}){
+    const [darkMode, setDarkMode] = useLocalStorage('darkMode', 'light');
+    
     return (
-        <div style={{color: UserPreferences.darkMode ? Themes.dark.accent : Themes.light.accent}}>
+        <div style={{color: darkMode ? Themes.dark.accent : Themes.light.accent}}>
             {children}
         </div>
     );

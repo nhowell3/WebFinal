@@ -1,14 +1,13 @@
-import UserPreferences from "../preferences/UserPreferences";
-
 export default function DarkModeToggle({}){
     const handleChange = async (e) => {
         let value = e.target.checked;
+        console.log(localStorage.getItem("darkMode"));
         if (value){
-            await UserPreferences.setDarkMode(true);
+            localStorage.setItem("darkMode", 'true');
         } else {
-            await UserPreferences.setDarkMode(false);
+            localStorage.setItem("darkMode", 'false');
         }
-        // window.location.reload();
+        window.location.reload();
     }
 
     return (
@@ -16,7 +15,7 @@ export default function DarkModeToggle({}){
             <input
                 type="checkbox"
                 onChange={handleChange}
-                defaultChecked={UserPreferences.darkMode === 'true'}
+                defaultChecked={localStorage.getItem("darkMode") === 'true'}
             />
         </>
     );
