@@ -7,6 +7,7 @@ import PaddedView from "../components/PaddedView";
 import HorizontalList from "../components/HorizontalList";
 import AccentDiv from "../components/AccentDiv";
 import { ToastContainer, toast } from 'react-toastify';
+import SocialLinks from "../components/SocialLinks";
 
 export default function ContactPage({}){
     const [form, setForm] = useState({name: '', email: '', message: ''});
@@ -32,12 +33,8 @@ export default function ContactPage({}){
         <>
             <Header>Contact</Header>
             <PaddedView>
-                <AccentDiv>
-                    <HorizontalList className="mb-4">
-                        <a href="mailto:nhowell3@atu.edu">nhowell3@atu.edu</a>
-                        <a href="https://github.com/nhowell3">https://github.com/nhowell3</a>
-                    </HorizontalList>
-                </AccentDiv>
+                <SocialLinks/>
+                <br/>
                 <form onSubmit={handleSubmit}>
                     <label>Name</label>
                     <Card className="mb-4 rounded-md w-full">

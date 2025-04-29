@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Themes from "../themes/Themes";
 import { useLocalStorage } from "@uidotdev/usehooks";
+import { useLocation } from "react-router-dom";
 
 export default function NavLink({children, to = ''}){
+    const location = useLocation();
     const [darkMode, setDarkMode] = useLocalStorage('darkMode', 'light');
     const [textColor, setTextColor] = useState(darkMode ? Themes.dark.primaryText : Themes.light.primaryText);
 
@@ -24,7 +26,7 @@ export default function NavLink({children, to = ''}){
                 <div
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
-                    style={{color: textColor}}
+                    style={{color: textColor, textDecorationLine:  '/' + location.pathname.split("/")[1] === to ? 'underline' : ''}}
                 >
                     {children}
                 </div>

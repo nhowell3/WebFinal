@@ -7,15 +7,16 @@ import DarkModeToggle from "./DarkModeToggle";
 export default function Nav({}){
     return (
         <nav>
-            <ContentDiv useSecondaryBg={true}>
-                <HorizontalList className="px-64">
+            <br/>
+            <ContentDiv className="pl-8">
+                <HorizontalList className="justify-start">
                     <NavLink to="/">Home</NavLink>  
                     <NavLink to="/projects">Projects</NavLink>  
                     <NavLink to="/education">Education</NavLink>  
                     <NavLink to="/skills">Skills</NavLink>  
                     <NavLink to="/contact">Contact</NavLink>  
                 </HorizontalList>
-                <DarkModeToggle/>
+                {/* <DarkModeToggle/> */}
             </ContentDiv>
         </nav>
     );

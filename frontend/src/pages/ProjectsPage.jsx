@@ -4,6 +4,7 @@ import API from "../environment/API";
 import Header from "../components/Header";
 import Card from "../components/Card";
 import ProjectCard from "../components/ProjectCard";
+import PaddedView from "../components/PaddedView";
 
 export default function ProjectsPage({}){
     const [projects, setProjects] = useState([]);
@@ -16,16 +17,18 @@ export default function ProjectsPage({}){
 
     return (
         <>
-            <Header>Projects</Header>
-            {projects.map((project, index) => {
-                return (
-                    <div key={index}>
-                        <ProjectCard
-                            project={project}
-                        />
-                    </div>
-                );   
-            })}
+            <PaddedView>
+                <Header>Projects</Header>
+                {projects.map((project, index) => {
+                    return (
+                        <div key={index}>
+                            <ProjectCard
+                                project={project}
+                            />
+                        </div>
+                    );   
+                })}
+            </PaddedView>
         </>
     );
 }
