@@ -4,7 +4,7 @@ import Themes from "../themes/Themes";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { useLocation } from "react-router-dom";
 
-export default function NavLink({children, to = ''}){
+export default function NavLink({children, to = '', onClick}){
     const location = useLocation();
     const [darkMode, setDarkMode] = useLocalStorage('darkMode', 'light');
     const [textColor, setTextColor] = useState(darkMode ? Themes.dark.primaryText : Themes.light.primaryText);
@@ -22,6 +22,7 @@ export default function NavLink({children, to = ''}){
             <Link 
                 className="text-2xl"
                 to={to}
+                onClick={onClick}
             >
                 <div
                     onMouseEnter={handleMouseEnter}

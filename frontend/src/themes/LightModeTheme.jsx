@@ -1,9 +1,10 @@
 const LightModeTheme = {
-    primaryBg: '#000000',
-    secondaryBg: '#14213d',
+    primaryBg: '#e5e5e5',
+    secondaryBg: '#ffffff',
     accent: '#fca311',
-    secondaryText: '#e5e5e5',
-    primaryText: '#ffffff'
+    secondaryText: '#14213d',
+    primaryText: '#000000',
+    faded: '#000000AA'
 }
 
 export default LightModeTheme;

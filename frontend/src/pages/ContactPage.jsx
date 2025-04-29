@@ -4,10 +4,17 @@ import axios from "axios";
 import API from "../environment/API";
 import Card from "../components/Card";
 import PaddedView from "../components/PaddedView";
-import HorizontalList from "../components/HorizontalList";
-import AccentDiv from "../components/AccentDiv";
-import { ToastContainer, toast } from 'react-toastify';
+import { Slide, ToastContainer, toast } from 'react-toastify';
 import SocialLinks from "../components/SocialLinks";
+
+const toastSettings = {
+    theme: "colored",
+    autoClose: 1000,
+    transition: Slide,
+    pauseOnHover: false,
+    pauseOnFocusLoss: false,
+    hideProgressBar: true,
+}
 
 export default function ContactPage({}){
     const [form, setForm] = useState({name: '', email: '', message: ''});
@@ -21,11 +28,11 @@ export default function ContactPage({}){
         axios.post(API + 'contact', form)
         .then(res => {
             setForm({name: '', email: '', message: ''});
-            toast("Message Sent Successfully");
+            toast.success("Message Sent Successfully", toastSettings);
         })
         .catch (err => {
             console.error("Error submitting the message:", err);
-            toast("Message Failed to Send");
+            toast.error("Message Failed to Send", toastSettings);
         });
     };
 

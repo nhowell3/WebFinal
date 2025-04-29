@@ -1,11 +1,6 @@
-import ContentDiv from "../components/ContentDiv";
 import PaddedView from "../components/PaddedView";
-import Header from "../components/Header";
 import FlexContainer from "../components/FlexContainer";
 import FlexItem from "../components/FlexItem";
-import SubHeader from "../components/SubHeader";
-import AccentDiv from "../components/AccentDiv";
-import HorizontalList from "../components/HorizontalList";
 import SecondaryColorDiv from "../components/SecondaryColorDiv";
 import Card from "../components/Card";
 import SocialLinks from "../components/SocialLinks";
@@ -22,7 +17,7 @@ export default function HomePage({}){
                             <h1 className="text-4xl text-center">Full Stack Developer</h1>
                         </SecondaryColorDiv>
                     </FlexItem>
-                    <FlexItem className='overflow-hidden'>
+                    <FlexItem>
                         <img src='../../me.jpg' alt='Picture of me' className='mt-8 mx-auto rounded-4xl max-w-2xs lg:mx-0 lg:mt-0 shadow-xl'/>
                     </FlexItem>
                 </FlexContainer>

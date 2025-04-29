@@ -1,14 +1,12 @@
 import ContentDiv from "./ContentDiv";
+import NoPaddingCard from "./NoPaddingCard";
 
 export default function Card({children, className = ''}){
     return (
         <>
-            <ContentDiv
-                useSecondaryBg={true}
-                className={"w-fit py-2 px-4 rounded-2xl shadow-2xl " + className}
-            >
+            <NoPaddingCard className={"py-2 px-4 " + className}>
                 {children}
-            </ContentDiv>
+            </NoPaddingCard>
         </>
     );
 }

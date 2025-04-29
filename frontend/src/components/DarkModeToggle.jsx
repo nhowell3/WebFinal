@@ -12,11 +12,15 @@ export default function DarkModeToggle({}){
 
     return (
         <>
-            <input
-                type="checkbox"
-                onChange={handleChange}
-                defaultChecked={localStorage.getItem("darkMode") === 'true'}
-            />
+            <div className="flex gap-2 align-middle">
+                <p className="self-center whitespace-nowrap">Dark Mode:</p>
+                <input
+                    type="checkbox"
+                    onChange={handleChange}
+                    className="translate-y-0.25"
+                    defaultChecked={localStorage.getItem("darkMode") === 'true'}
+                />
+            </div>
         </>
     );
 }
